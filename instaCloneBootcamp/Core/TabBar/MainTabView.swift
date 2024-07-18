@@ -10,11 +10,11 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView{
-            Text("Feed")
+            FeedView()
                 .tabItem {
                     Image(systemName: "house")// ikon donduruyo. bu ıkonlar sf sembol uygulaması var ordan gelıyor
                 }
-            Text("Search")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }

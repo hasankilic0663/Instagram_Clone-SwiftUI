@@ -9,7 +9,34 @@ import SwiftUI
 
 struct FeedView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView{
+                LazyVStack{//ramden yemıyo ekranda olmadıgı surece
+                    ForEach(0...10, id: \.self ){post in
+                        FeedCell()
+                        
+                    }
+                }
+            }
+            .navigationTitle("Feed")// title baslık verdi
+            .navigationBarTitleDisplayMode(.inline )//baslıgı ortaladı
+            .toolbar{
+                ToolbarItem( placement: .topBarLeading) {
+                    Image("instagram")
+                        
+                        .resizable()
+                        .frame(width: 100,height: 35)
+                        
+                }
+                ToolbarItem( placement: .topBarTrailing) {//ust bar butonu eklıyo sag tarfa dm butonu ekleyecez
+                    Image(systemName: "paperplane")
+                        .imageScale(.large)//buton boyutu
+                    
+                    
+                }
+                
+            }
+        }
     }
 }
 

@@ -21,6 +21,7 @@ struct FeedCell: View {
                 Text("hasankilic0663")
                     .font(.footnote)
                     .fontWeight(.semibold)
+                    .foregroundStyle(Color("buttonTextColor"))
                 Spacer()
             }
             .padding(.leading, 8)//bastan yanı sag tarafta nsadece bosluk verdik
@@ -33,7 +34,7 @@ struct FeedCell: View {
                 .scaledToFill()
                 .frame(height: 400)
                 .clipShape(Rectangle())//burdada resmı sabıtledık
-                .foregroundStyle(Color("buttonTextColor"))
+                
             
             
             //action butonlarrı yanı begenı butonu yorum butonu gııb
@@ -73,8 +74,22 @@ struct FeedCell: View {
                 .padding(.top,1)
             //acıklama kısmı
             HStack{
-                
+                Text("hasankilic0663")
+                    .fontWeight(.semibold) + // burada + verirsek bir olur text
+                Text("Merhaba , Ben Yazılımcıyım ddddddd")
             }
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/ , alignment: .leading)
+            .font(.footnote)
+            .padding(.leading,10)
+            .padding(.top,1)
+            
+            Text("10h ago")
+                .font(.footnote)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .leading)
+                .padding(.leading,10)
+                .padding(.top,1)
+                .foregroundStyle(.gray)
+            
             
         }
     }
