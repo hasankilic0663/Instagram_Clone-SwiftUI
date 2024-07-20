@@ -10,6 +10,9 @@
 		9F6EB99A2C4A951D00770E33 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9992C4A951D00770E33 /* LoginView.swift */; };
 		9F6EB99C2C4ABDF100770E33 /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB99B2C4ABDF100770E33 /* AddEmailView.swift */; };
 		9F6EB99E2C4AC33B00770E33 /* IGTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB99D2C4AC33B00770E33 /* IGTextFieldModifier.swift */; };
+		9F6EB9A02C4B861100770E33 /* CreateUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB99F2C4B861100770E33 /* CreateUsernameView.swift */; };
+		9F6EB9A22C4B879B00770E33 /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A12C4B879B00770E33 /* CreatePasswordView.swift */; };
+		9F6EB9A42C4B886D00770E33 /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A32C4B886D00770E33 /* CompleteSignUpView.swift */; };
 		9F82FEFD2C45C8CB0048B796 /* instaCloneBootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82FEFC2C45C8CB0048B796 /* instaCloneBootcampApp.swift */; };
 		9F82FEFF2C45C8CB0048B796 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82FEFE2C45C8CB0048B796 /* ContentView.swift */; };
 		9F82FF012C45C8CC0048B796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F82FF002C45C8CC0048B796 /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		9F6EB9992C4A951D00770E33 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9F6EB99B2C4ABDF100770E33 /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		9F6EB99D2C4AC33B00770E33 /* IGTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextFieldModifier.swift; sourceTree = "<group>"; };
+		9F6EB99F2C4B861100770E33 /* CreateUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameView.swift; sourceTree = "<group>"; };
+		9F6EB9A12C4B879B00770E33 /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
+		9F6EB9A32C4B886D00770E33 /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
 		9F82FEF92C45C8CB0048B796 /* instaCloneBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaCloneBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F82FEFC2C45C8CB0048B796 /* instaCloneBootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaCloneBootcampApp.swift; sourceTree = "<group>"; };
 		9F82FEFE2C45C8CB0048B796 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +143,9 @@
 			children = (
 				9F6EB9992C4A951D00770E33 /* LoginView.swift */,
 				9F6EB99B2C4ABDF100770E33 /* AddEmailView.swift */,
+				9F6EB99F2C4B861100770E33 /* CreateUsernameView.swift */,
+				9F6EB9A12C4B879B00770E33 /* CreatePasswordView.swift */,
+				9F6EB9A32C4B886D00770E33 /* CompleteSignUpView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -266,11 +275,14 @@
 				9F6EB99A2C4A951D00770E33 /* LoginView.swift in Sources */,
 				9F82FEFD2C45C8CB0048B796 /* instaCloneBootcampApp.swift in Sources */,
 				9F6EB99C2C4ABDF100770E33 /* AddEmailView.swift in Sources */,
+				9F6EB9A02C4B861100770E33 /* CreateUsernameView.swift in Sources */,
+				9F6EB9A42C4B886D00770E33 /* CompleteSignUpView.swift in Sources */,
 				9F82FF212C494C2D0048B796 /* SearchView.swift in Sources */,
 				9F6EB99E2C4AC33B00770E33 /* IGTextFieldModifier.swift in Sources */,
 				9F82FF1B2C45D8FE0048B796 /* UserStatView.swift in Sources */,
 				9F82FF1D2C4707120048B796 /* FeedView.swift in Sources */,
 				9F82FF162C45CAEA0048B796 /* MainTabView.swift in Sources */,
+				9F6EB9A22C4B879B00770E33 /* CreatePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

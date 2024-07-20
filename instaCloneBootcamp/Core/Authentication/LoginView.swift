@@ -26,19 +26,16 @@ struct LoginView: View {
                     
                     TextField("Enter your email", text:$email)
                         .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)//büyük harf kullanımıını devre dısı bırakır
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal,24)
+//                        .font(.subheadline)
+//                        .padding(12)
+//                        .background(Color(.systemGray6))
+//                        .cornerRadius(10)
+//                        .padding(.horizontal,24)
+                        .modifier(IGTextFieldModifier())//bunu kullanarak yukardakılerı tek bır satırla cagırıyoruz
                     
                     
                     SecureField("Enter your password", text:$password)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal,24)
+                        .modifier(IGTextFieldModifier())
                     
                     Button {
                         print("LOGIN BUTTON")

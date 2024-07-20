@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct IGTextFieldModifier: ViewModifier {
-    var body: some View {
-        Text("hasan")
+    func body(content : Content) -> some View {
+        content
+            .font(.subheadline)
+            .font(.subheadline)
+            .padding(12)
+            .background(Color(.systemGray6))
+            .cornerRadius(6)
+            .padding(.horizontal,24)
     }
-}
-
-#Preview {
-    IGTextFieldModifier()
 }
