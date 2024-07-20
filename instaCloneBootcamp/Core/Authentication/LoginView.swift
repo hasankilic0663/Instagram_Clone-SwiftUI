@@ -32,10 +32,10 @@ struct LoginView: View {
 //                        .cornerRadius(10)
 //                        .padding(.horizontal,24)
                         .modifier(IGTextFieldModifier())//bunu kullanarak yukardakılerı tek bır satırla cagırıyoruz
+                        .padding(.bottom,12)
                     
-                    
-                    SecureField("Enter your password", text:$password)
-                        .modifier(IGTextFieldModifier())
+                    SecureFieldWithButton(text: $password, "Enter your Password")
+                        .padding(.bottom,10)
                     
                     Button {
                         print("LOGIN BUTTON")

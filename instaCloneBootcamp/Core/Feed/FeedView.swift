@@ -12,8 +12,8 @@ struct FeedView: View {
         NavigationStack {
             ScrollView{
                 LazyVStack{//ramden yemıyo ekranda olmadıgı surece
-                    ForEach(0...10, id: \.self ){post in
-                        FeedCell()
+                    ForEach(Post.MOCK_POST){post in
+                        FeedCell(post: post)
                         
                     }
                 }

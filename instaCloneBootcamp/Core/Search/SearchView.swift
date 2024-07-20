@@ -13,30 +13,39 @@ struct SearchView: View {
         NavigationStack {
             ScrollView{
                 LazyVStack{
-                    ForEach(0...20, id:\.self){ user in
-                        HStack{
-                            Image("hasan")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40,height: 40)
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            VStack(alignment:.leading){
-                                Text("hkilichusein")
-                                    .fontWeight(.semibold)
-                                Text("Hasan Hüseyin Kılıç")
-                                
-                            }
-                            .font(.footnote)
+                    ForEach(User.MOCK_USER){ user in //mock user ornek data sayısı kadar olusturdu
+                        NavigationLink(value: user) {//tıkladıgımızda o linke gitsin diye sarmaladık
+                            HStack{
+                                Image(user.profileImageUrl ?? "") //bos olabilir bossa mocktakılerı ver
                             
-                            Spacer()
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40,height: 40)
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                VStack(alignment:.leading){
+                                    Text(user.username)
+                                        .fontWeight(.semibold)
+                                    Text(user.fullname ?? "")
+                                        .foregroundStyle(Color("buttonTextColor"))
+                                        .font(.footnote)
+                                    
+                                }
+                                .font(.footnote)
+                                
+                                Spacer()
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
                      
                         
                     }
                 }
                 .searchable(text: $searchText,prompt: "Search...")//bu metot yukarıda arama butonu yapıyo bındıng verı olarak searchtext gırdık ve promp  yerıde boısta ıken ne yazsın dıye
             }
+            
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }

@@ -13,6 +13,10 @@
 		9F6EB9A02C4B861100770E33 /* CreateUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB99F2C4B861100770E33 /* CreateUsernameView.swift */; };
 		9F6EB9A22C4B879B00770E33 /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A12C4B879B00770E33 /* CreatePasswordView.swift */; };
 		9F6EB9A42C4B886D00770E33 /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A32C4B886D00770E33 /* CompleteSignUpView.swift */; };
+		9F6EB9A62C4B8BCD00770E33 /* SecureFieldWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A52C4B8BCD00770E33 /* SecureFieldWithButton.swift */; };
+		9F6EB9A82C4B8F3C00770E33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A72C4B8F3C00770E33 /* User.swift */; };
+		9F6EB9AA2C4BF04400770E33 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9A92C4BF04400770E33 /* CurrentUserProfileView.swift */; };
+		9F6EB9AC2C4BF2E800770E33 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6EB9AB2C4BF2E800770E33 /* Post.swift */; };
 		9F82FEFD2C45C8CB0048B796 /* instaCloneBootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82FEFC2C45C8CB0048B796 /* instaCloneBootcampApp.swift */; };
 		9F82FEFF2C45C8CB0048B796 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82FEFE2C45C8CB0048B796 /* ContentView.swift */; };
 		9F82FF012C45C8CC0048B796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F82FF002C45C8CC0048B796 /* Assets.xcassets */; };
@@ -32,6 +36,10 @@
 		9F6EB99F2C4B861100770E33 /* CreateUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameView.swift; sourceTree = "<group>"; };
 		9F6EB9A12C4B879B00770E33 /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		9F6EB9A32C4B886D00770E33 /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
+		9F6EB9A52C4B8BCD00770E33 /* SecureFieldWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFieldWithButton.swift; sourceTree = "<group>"; };
+		9F6EB9A72C4B8F3C00770E33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9F6EB9A92C4BF04400770E33 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
+		9F6EB9AB2C4BF2E800770E33 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9F82FEF92C45C8CB0048B796 /* instaCloneBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaCloneBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F82FEFC2C45C8CB0048B796 /* instaCloneBootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaCloneBootcampApp.swift; sourceTree = "<group>"; };
 		9F82FEFE2C45C8CB0048B796 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +135,8 @@
 		9F82FF0D2C45C9500048B796 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F6EB9A72C4B8F3C00770E33 /* User.swift */,
+				9F6EB9AB2C4BF2E800770E33 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				9F82FF172C45CE800048B796 /* ProfileView.swift */,
+				9F6EB9A92C4BF04400770E33 /* CurrentUserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 			children = (
 				9F82FF1A2C45D8FE0048B796 /* UserStatView.swift */,
 				9F6EB99D2C4AC33B00770E33 /* IGTextFieldModifier.swift */,
+				9F6EB9A52C4B8BCD00770E33 /* SecureFieldWithButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -271,7 +283,9 @@
 			files = (
 				9F82FF1F2C47071E0048B796 /* FeedCell.swift in Sources */,
 				9F82FF182C45CE800048B796 /* ProfileView.swift in Sources */,
+				9F6EB9A62C4B8BCD00770E33 /* SecureFieldWithButton.swift in Sources */,
 				9F82FEFF2C45C8CB0048B796 /* ContentView.swift in Sources */,
+				9F6EB9A82C4B8F3C00770E33 /* User.swift in Sources */,
 				9F6EB99A2C4A951D00770E33 /* LoginView.swift in Sources */,
 				9F82FEFD2C45C8CB0048B796 /* instaCloneBootcampApp.swift in Sources */,
 				9F6EB99C2C4ABDF100770E33 /* AddEmailView.swift in Sources */,
@@ -282,7 +296,9 @@
 				9F82FF1B2C45D8FE0048B796 /* UserStatView.swift in Sources */,
 				9F82FF1D2C4707120048B796 /* FeedView.swift in Sources */,
 				9F82FF162C45CAEA0048B796 /* MainTabView.swift in Sources */,
+				9F6EB9AC2C4BF2E800770E33 /* Post.swift in Sources */,
 				9F6EB9A22C4B879B00770E33 /* CreatePasswordView.swift in Sources */,
+				9F6EB9AA2C4BF04400770E33 /* CurrentUserProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
