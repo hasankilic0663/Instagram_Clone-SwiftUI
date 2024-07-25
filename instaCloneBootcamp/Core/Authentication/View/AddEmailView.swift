@@ -1,19 +1,21 @@
 //
-//  CompleteSignUpView.swift
+//  AddEmailView.swift
 //  instaCloneBootcamp
 //
-//  Created by Hasan on 20.07.2024.
+//  Created by Hasan on 19.07.2024.
 //
 
 import SwiftUI
 
-struct CompleteSignUpView: View {
-    @Environment(\.dismiss) var dismiss
+struct AddEmailView: View {
+    
+    @Environment(\.dismiss) var dismiss // buradakı gerı butonunu aktıf etme
+    @EnvironmentObject var viewModel :RegisterViewModel
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack(spacing:12){
                 Spacer()
-                Text("Welcome to Instagram, hasankilic0663")
+                Text("Add your email")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color("buttonTextColor"))
@@ -22,12 +24,15 @@ struct CompleteSignUpView: View {
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,24)
-                
+                TextField("Email", text: $viewModel.email)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(IGTextFieldModifier())
                 
                 NavigationLink {//button kullaırsak sayfalar arası geçiş olmaz
-                   Text("Complete")
+                    CreateUsernameView()
+                        .navigationBarBackButtonHidden()//bunu yapmamızın amacı tıkladıgında otomatık cancel butonu yerıne kendi dismiss metodu ıle yaptıgımız butonu koyuyoruz. yanı cancel butonunu kaldırıyo
                 } label: {
-                    Text("Complete Sign Up")
+                    Text("Next")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                     //                        .frame(width: 342 , height: 44)
@@ -60,5 +65,6 @@ struct CompleteSignUpView: View {
 }
 
 #Preview {
-    CompleteSignUpView()
+    AddEmailView()
+        .environmentObject(RegisterViewModel())
 }

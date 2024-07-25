@@ -1,5 +1,5 @@
 //
-//  CreatePasswordView.swift
+//  CompleteSignUpView.swift
 //  instaCloneBootcamp
 //
 //  Created by Hasan on 20.07.2024.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct CreatePasswordView: View {
-    @State private var password = ""
-    @Environment(\.dismiss) var dismiss // buradakı gerı butonunu aktıf etme .    Dİsmis fonksıyonunu eklemeden calsımaz
+struct CompleteSignUpView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel : RegisterViewModel
     var body: some View {
         NavigationStack{
             VStack(spacing:12){
                 Spacer()
-                Text("Add your Password")
+                Text("Welcome to Instagram, hasankilic0663")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color("buttonTextColor"))
@@ -23,16 +23,12 @@ struct CreatePasswordView: View {
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,24)
-                SecureField("Password", text: $password)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    .modifier(IGTextFieldModifier())
                 
-                NavigationLink {//button kullaırsak sayfalar arası geçiş olmaz
-                    //PASSWORD SAYFASINA YÖNLENDİR
-                    CompleteSignUpView()
-                        .navigationBarBackButtonHidden()
+                
+                Button {//button kullaırsak sayfalar arası geçiş olmaz
+                    Task { try await viewModel.createUser()}
                 } label: {
-                    Text("Next")
+                    Text("Complete Sign Up")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                     //                        .frame(width: 342 , height: 44)
@@ -65,5 +61,6 @@ struct CreatePasswordView: View {
 }
 
 #Preview {
-    CreatePasswordView()
+    CompleteSignUpView()
+        .environmentObject(RegisterViewModel())
 }

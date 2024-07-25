@@ -1,20 +1,21 @@
 //
-//  AddEmailView.swift
+//  CreatePasswordView.swift
 //  instaCloneBootcamp
 //
-//  Created by Hasan on 19.07.2024.
+//  Created by Hasan on 20.07.2024.
 //
 
 import SwiftUI
 
-struct AddEmailView: View {
-    @State private var email = ""
-    @Environment(\.dismiss) var dismiss // buradakı gerı butonunu aktıf etme
+struct CreatePasswordView: View {
+  
+    @Environment(\.dismiss) var dismiss // buradakı gerı butonunu aktıf etme .    Dİsmis fonksıyonunu eklemeden calsımaz
+    @EnvironmentObject var viewModel : RegisterViewModel
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             VStack(spacing:12){
                 Spacer()
-                Text("Add your email")
+                Text("Add your Password")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color("buttonTextColor"))
@@ -23,13 +24,14 @@ struct AddEmailView: View {
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,24)
-                TextField("Email", text: $email)
+                SecureField("Password", text: $viewModel.password)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(IGTextFieldModifier())
                 
                 NavigationLink {//button kullaırsak sayfalar arası geçiş olmaz
-                    CreateUsernameView()
-                        .navigationBarBackButtonHidden()//bunu yapmamızın amacı tıkladıgında otomatık cancel butonu yerıne kendi dismiss metodu ıle yaptıgımız butonu koyuyoruz. yanı cancel butonunu kaldırıyo
+                    //PASSWORD SAYFASINA YÖNLENDİR
+                    CompleteSignUpView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     Text("Next")
                         .font(.subheadline)
@@ -64,5 +66,6 @@ struct AddEmailView: View {
 }
 
 #Preview {
-    AddEmailView()
+    CreatePasswordView()
+        .environmentObject(RegisterViewModel())
 }

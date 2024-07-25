@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CreateUsernameView: View {
-    @State private var username = ""
+    
     @Environment(\.dismiss) var dismiss // buradakı gerı butonunu aktıf etme .    Dİsmis fonksıyonunu eklemeden calsımaz
+    
+    @EnvironmentObject var viewModel : RegisterViewModel
     var body: some View {
         NavigationStack {
             VStack(spacing:12){
@@ -23,7 +25,7 @@ struct CreateUsernameView: View {
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,24)
-                TextField("Username", text: $username)
+                TextField("Username", text: $viewModel.username)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(IGTextFieldModifier())
                 
@@ -66,4 +68,5 @@ struct CreateUsernameView: View {
 
 #Preview {
     CreateUsernameView()
+        .environmentObject(RegisterViewModel())
 }

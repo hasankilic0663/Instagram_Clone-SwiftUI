@@ -9,9 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State private var email = ""
-    @State private var password = ""
-        
+   @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
         
@@ -24,7 +22,7 @@ struct LoginView: View {
                         .scaledToFit()
                         .frame(width: 220 , height: 100)
                     
-                    TextField("Enter your email", text:$email)
+                    TextField("Enter your email", text:$viewModel.email)
                         .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)//büyük harf kullanımıını devre dısı bırakır
 //                        .font(.subheadline)
 //                        .padding(12)
@@ -34,11 +32,13 @@ struct LoginView: View {
                         .modifier(IGTextFieldModifier())//bunu kullanarak yukardakılerı tek bır satırla cagırıyoruz
                         .padding(.bottom,12)
                     
-                    SecureFieldWithButton(text: $password, "Enter your Password")
+                    SecureFieldWithButton(text: $viewModel.password, "Enter your Password")
                         .padding(.bottom,10)
                     
                     Button {
-                        print("LOGIN BUTTON")
+                        Task { // try yapmamızın amacı uygulama cokmesın dıye bı hata cıktıgında
+                            try await viewModel.signIn()
+                        }
                     } label: {
                         Text("Login")
                             .font(.subheadline)
