@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import Firebase
+import FirebaseFirestoreSwift
 
 class AuthService {//authservise bize bir kullanıcı saglayacak bunun ıcın bı publsıhed yapmmaız lazım
     
@@ -34,12 +36,20 @@ class AuthService {//authservise bize bir kullanıcı saglayacak bunun ıcın b�
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
+            await uploadUserData(uid: result.user.uid,username:  username, email: email)
             
         } catch{
             print("Hata : \(error.localizedDescription)")
             
         }
         
+    }
+    
+    func uploadUserData(uid: String,username:String , email: String) async{
+        let user = User(id: uid, username: username, email: email)
+        guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }//anlamadım
+        
+        try? await Firestore.firestore()
     }
     
     func loadUserData() async throws{ }//bu herhangi birşey almayacak . Cunku auth servısımızle fırebasedekılogin olmus kullanıcıyı bulabılıyorduk
