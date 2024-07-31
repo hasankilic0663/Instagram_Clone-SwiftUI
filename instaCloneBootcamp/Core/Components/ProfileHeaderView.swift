@@ -46,7 +46,7 @@ struct ProfileHeaderView: View {
                         .font(.footnote)
                     
                 }
-
+                Text(user.username)
                 
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .leading)// bunuda yazmamız gerekıyor sebebı ıse yatay genıslık ekran kadar olsun ve soldan baslatsın

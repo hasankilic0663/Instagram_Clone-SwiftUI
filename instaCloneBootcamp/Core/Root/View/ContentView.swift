@@ -19,8 +19,8 @@ struct ContentView: View {
                     .environmentObject(registerViewModel) //environment tanımladık ana sayfaya
                 
                 // tanımlanmamıs durumda ıse sen gel login işlemi yap
-            } else{// eger varsada usersessıon dırek maınden baslat
-                MainTabView()
+            } else if let currentUser = viewModel.currentUser{// eger varsada usersessıon dırek maınden baslat
+                MainTabView(user: currentUser)
             }
             
         }

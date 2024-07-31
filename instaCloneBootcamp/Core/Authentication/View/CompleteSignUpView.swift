@@ -14,7 +14,7 @@ struct CompleteSignUpView: View {
         NavigationStack{
             VStack(spacing:12){
                 Spacer()
-                Text("Welcome to Instagram, hasankilic0663")
+                Text("Welcome to Instagram, \(viewModel.username)")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(Color("buttonTextColor"))
@@ -25,7 +25,12 @@ struct CompleteSignUpView: View {
                     .padding(.horizontal,24)
                 
                 
-                Button {//button kullaırsak sayfalar arası geçiş olmaz
+                if !viewModel.errorMessage.isEmpty{
+                    Text(viewModel.errorMessage)
+                        .foregroundStyle(.red)
+                }
+                
+                Button {
                     Task { try await viewModel.createUser()}
                 } label: {
                     Text("Complete Sign Up")
