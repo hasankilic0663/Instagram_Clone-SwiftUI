@@ -16,8 +16,8 @@ struct CreatePasswordView: View {
             VStack(spacing:12){
                 Spacer()
                 Text("Add your Password")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title)
+                    .fontWeight(.bold)
                     .foregroundStyle(Color("buttonTextColor"))
                 Text("You'll use this email to sign in to your account")
                     .font(.footnote)
@@ -25,7 +25,7 @@ struct CreatePasswordView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,24)
                 SecureField("Password", text: $viewModel.password)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .autocapitalization(.none)
                     .modifier(IGTextFieldModifier())
                 
                 NavigationLink {//button kullaırsak sayfalar arası geçiş olmaz
@@ -40,13 +40,13 @@ struct CreatePasswordView: View {
                         .foregroundStyle(Color("buttonTextColor"))
                         .padding()
                 }
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .center)
+                .frame(maxWidth: .infinity,alignment: .center)
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)
                         .stroke(Color("buttonTextColor"),lineWidth:1)//stroke ise içinin rengini siliyo dis cerceve yapıyo sadece
                 )
                 .padding(.horizontal,24)
-
+                
                 Spacer()
                 
                     .toolbar{
@@ -58,8 +58,8 @@ struct CreatePasswordView: View {
                                 }
                         }
                     }
-                    
-                    
+                
+                
             }
         }
     }
